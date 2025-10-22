@@ -1,5 +1,3 @@
-{{ config( materialized='table' ) }}
-
 WITH bronze_data AS (
     SELECT
         event_id,

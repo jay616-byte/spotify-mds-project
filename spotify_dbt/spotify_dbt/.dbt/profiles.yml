@@ -1,0 +1,26 @@
+ins_dbt:
+  outputs:
+    dev:
+      account: eo03601.central-india.azure
+      database: insurance
+      password: Banking123456@
+      role: accountadmin
+      schema: analytics
+      threads: 1
+      type: snowflake
+      user: jay
+      warehouse: compute_wh
+  target: dev
+spotify_dbt:
+  outputs:
+    dev:
+      account: sv17653.central-india.azure
+      database: SPOTIFY_DB
+      password: Spotify@123456
+      role: ACCOUNTADMIN
+      schema: PROCESSING
+      threads: 2
+      type: snowflake
+      user: jay
+      warehouse: COMPUTE_WH
+  target: dev

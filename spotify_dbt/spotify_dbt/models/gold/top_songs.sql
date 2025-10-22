@@ -1,5 +1,3 @@
-{{ config( materialized='table' ) }}
-
 SELECT
     song_id,
     song_name,

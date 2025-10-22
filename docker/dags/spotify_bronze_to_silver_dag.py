@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 # ------------------------------------------------------
 #               LOAD ENVIRONMENT VARIABLES
 # ------------------------------------------------------
-load_dotenv(dotenv_path="/opt/airflow/dags/.env.spotify_minio_to_snowflake")
+load_dotenv(dotenv_path="/opt/airflow/dags/.env")
 
 # ------------------------------------------------------
 #               CONFIGURATION VARIABLES
