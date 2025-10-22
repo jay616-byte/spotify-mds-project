@@ -1,0 +1,12 @@
+.env
+__pycache__/
+logs/
+plugins/
+analyses/
+macros/
+seeds/
+snapshots/
+target/
+tests/
+dbt_project.yml
+README.md
