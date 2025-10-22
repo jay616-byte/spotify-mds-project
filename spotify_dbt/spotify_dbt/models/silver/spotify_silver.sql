@@ -1,3 +1,5 @@
+{{ config( materialized='table' ) }}
+
 WITH bronze_data AS (
     SELECT
         event_id,
@@ -11,7 +13,6 @@ WITH bronze_data AS (
         TRY_TO_TIMESTAMP_TZ(timestamp) AS event_ts
     FROM {{ source('bronze', 'spotify_events_bronze') }}
 )
-
 SELECT *
 FROM bronze_data
 WHERE event_id IS NOT NULL

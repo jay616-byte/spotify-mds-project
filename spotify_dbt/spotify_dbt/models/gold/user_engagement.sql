@@ -1,3 +1,5 @@
+{{ config( materialized='table' ) }}
+
 SELECT
     user_id,
     device_type,
@@ -7,5 +9,5 @@ SELECT
     COUNT(CASE WHEN event_type = 'add_to_playlist' THEN 1 END) AS playlist_adds,
     DATE_TRUNC('day', event_ts) AS day
 FROM {{ ref('spotify_silver') }}
-GROUP BY 1, 2, 3, 7
+GROUP BY user_id, device_type, country, DATE_TRUNC('day', event_ts)
 ORDER BY plays DESC

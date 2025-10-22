@@ -1,3 +1,5 @@
+{{ config( materialized='table' ) }}
+
 SELECT
     song_id,
     song_name,
@@ -5,5 +7,5 @@ SELECT
     COUNT(CASE WHEN event_type = 'play' THEN 1 END) AS total_plays,
     COUNT(CASE WHEN event_type = 'skip' THEN 1 END) AS total_skips
 FROM {{ ref('spotify_silver') }}
-GROUP BY 1, 2, 3
+GROUP BY song_id, song_name, artist_name
 ORDER BY total_plays DESC
